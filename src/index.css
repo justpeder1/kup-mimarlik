@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 22 59% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 22 59% 51%;
+
+    --radius: 0.25rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-architect-white text-architect-black font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-light tracking-tight;
+  }
+
+  .transition-default {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .image-hover {
+    @apply transition-all duration-400 ease-in-out hover:opacity-90;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .clip-triangle {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+  
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .clip-geometric {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 70% 100%, 0 100%);
+  }
+  
+  .hover-link {
+    @apply relative overflow-hidden;
+  }
+  
+  .hover-link::after {
+    @apply content-[''] absolute w-full h-[1px] bg-current left-0 bottom-0 transform scale-x-0 origin-right transition-transform duration-300 ease-out;
+  }
+  
+  .hover-link:hover::after {
+    @apply transform scale-x-100 origin-left;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .section-margin {
+    @apply my-16 md:my-24 lg:my-32;
+  }
+}
